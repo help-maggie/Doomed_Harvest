@@ -9,9 +9,9 @@ x_0=y(1);
  
 %%%% (2) increasing desperation %%%%
  rho=3;
- lambda=.07;
+ lambda=.007;
  mu=x_0/2; % shifts curve to center around half of the intial fish population 
- E= @(N,S,x) N+rho*(S)/(1+exp(lambda*x-mu));
+ E= @(N,S,x) N+(rho*(S)/(1+exp(lambda*x-mu)));
  
  
  
@@ -23,18 +23,18 @@ q=0.001;
 %%
 %%%%%% Fish Population ODE Options %%%%%%
 
-% K=150000;
-% r=-.01;
-% dxdt=@(x,E) r*x*(1-(x/K))-q*E*x; %density dependent decrease where the smaller the population is, the faster the decrease
-
-r=.3;
-b=0.007; %rate of decrease
-K_0=150000;
-K=K_0*(1-b)^t;
-dxdt=@(x,E) r*x*(1-(x/K))-q*E*x; %decreasing carrying cpacity
+K=150000;
+r=-.01;
+dxdt=@(x,E) r*x*(1-(x/K))-q*E*x; %density dependent decrease where the smaller the population is, the faster the decrease
 
 % r=.3;
-% m=.35; %proportion of death due to reason such as disease
+% b=0.007; %rate of decrease
+% K_0=150000;
+% K=K_0*(1-b)^t;
+% dxdt=@(x,E) r*x*(1-(x/K))-q*E*x; %decreasing carrying cpacity
+
+% r=.3;
+% m=.8; %proportion of death due to reason such as disease
 % K=150000;
 % dxdt=@(x,E) r*x*(1-(x/K))-m*x-q*E*x; %density dependent removal such as disease
 
@@ -73,16 +73,6 @@ phi_4=1;
         z = 1:floor(S);
         out = sum((1./(1+exp(-(z-alpha_4)/phi_4))).*poisspdf(z,c*S));
     end
-
- 
-% syms z;
-% gammaP_N = @(N) symsum(1/(1+exp(-(z-alpha_1)/phi_1))*poisspdf(z,c*N),z,1,floor(N));
-% betaP_S = @(S) sysmsum((1/(1+exp(-(z-alpha_2)/phi_2)))*poisspdf(z,c*S),z,1,floor(S));
-% psiP_R = @(R) sysmsum((1/(1+exp(-(z-alpha_3)/phi_3)))*poisspdf(z,c*R),z,1,floor(R));
-% deltaP_S = @(S) sysmsum((1/(1+exp(-(z-alpha_4)/phi_4)))*poisspdf(z,c*S),z,1,floor(S));
-
-%%
-%%%%%%%%%%%%% R_0 %%%%%%%%%%%%
 
 
 %% 
