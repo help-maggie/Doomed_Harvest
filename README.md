@@ -85,6 +85,7 @@ Adjust parameters as needed for specific scenarios or experiments.
 
 # Contributors
 Author: Maggie Sullens 
+
 Thanks to Dr. Justin Wright for help with complex contagion aspect of the code, Dr. David Finnoff and Katie Barkley for analysis contributions, Dr. Nina Fefferman for advising.
 
 # License
