@@ -1,4 +1,4 @@
-# Doomed_Harvest
+# Industry-Collapse
 
 This README provides an overview of the Industry Collapse model, which simulates the dynamics of a population system involving humans and fish, considering fishing effort, catchability, and expected values of switching states based on the number of contacts.. The model is implemented in MATLAB and utilizes Ordinary Differential Equations (ODEs) to represent the interactions and changes over time.
 
